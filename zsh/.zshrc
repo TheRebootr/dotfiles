@@ -19,12 +19,6 @@ setopt APPEND_HISTORY
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-eval "$(zoxide init zsh --cmd cd)"
-
-# starship
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-
 # fzf
 eval "$(fzf --zsh)"
 
@@ -80,3 +74,9 @@ source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.config/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
+eval "$(zoxide init zsh)"
