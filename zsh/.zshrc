@@ -1,7 +1,9 @@
 unsetopt beep
 
 # Add local ~/scripts to the PATH
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/scripts:$PATH" 
+export PATH="$HOME/.local/bin:$PATH"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="nvim"
 
@@ -80,3 +82,11 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 eval "$(zoxide init zsh)"
+
+# fnm
+FNM_PATH="/Users/therebootr/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+  # eval "`fnm env`"
+fi
